@@ -1,0 +1,33 @@
+<!--
+TEONITE Support - an application to submit a bug/features from your app/service to YouTrack/Redmine
+
+Copyright (C) 2012-2014 TEONITE - http://teonite.com
+
+-->
+<!DOCTYPE html>
+<html ng-app="ngSupport">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="dist/lib/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="dist/ngSupport.css" />
+  <script src="dist/lib/angularjs/angular.js"></script>
+  <script src="dist/lib/angularjs/angular-resource.js"></script>
+  <script src="dist/lib/angularjs/ui-bootstrap.js"></script>
+  <script src="dist/lib/angularjs/ui-bootstrap-tpls.js"></script>
+  <script>
+    var ngSupportConfig = {
+      server: 'test123'
+    }
+  </script>
+  <script src="dist/ngSupport.min.js"></script>
+</head>
+<body>
+
+<div class="fixed">
+  <div class="container">
+    <button ng-support support-type="simple" class="btn btn-xs btn-default pull-right">Zgłoś błąd</button>
+  </div>
+</div>
+</body>
+</html>
