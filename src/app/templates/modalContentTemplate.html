@@ -1,0 +1,58 @@
+<!--
+
+TEONITE Support - an application to submit a bug/features from your app/service to YouTrack/Redmine
+
+Copyright (C) 2012-2014 TEONITE - http://teonite.com
+
+-->
+<form id="ngSupport" class="form-horizontal" ng-submit="submit()">
+
+  <div class="modal-header">
+
+    <button type="button" class="close" ng-click="close()">
+      <span>&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+
+    <h3 class="modal-title">Zgłoś błąd/sugestię</h3>
+  </div>
+
+  <div class="modal-body">
+
+      <div class="form-group" ng-if="supportType=='advanced'">
+        <label class="col-sm-3 control-label">Typ *</label>
+        <div class="col-sm-9">
+          <div class="radio-inline">
+            <input type="radio" ng-model="issue.type" value="error"> Błąd
+          </div>
+          <div class="radio-inline">
+            <input type="radio" ng-model="issue.type" value="feature"> Sugestia
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Tytuł *</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" required="required" ng-model="issue.subject">
+          <div ng-repeat="error in errors.description" class="danger-text">{{error}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="col-sm-3 control-label" >Opis *</label>
+        <div class="col-sm-9">
+          <textarea id="description" class="form-control" required="required" ng-model="issue.description"></textarea>
+          <div ng-repeat="error in errors.description" class="danger-text">{{error}}</div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Wyślij</button>
+    <button class="btn btn-warning" ng-click="close()">Anuluj</button>
+    <div class="version">Teonite Support v1.0.0</div>
+  </div>
+
+</form>
