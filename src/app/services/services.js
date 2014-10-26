@@ -7,7 +7,8 @@ Copyright (C) 2012-2014 TEONITE - http://teonite.com
 */
 
 angular.module('ngSupport.services', [])
-  .factory(
+
+.factory(
   'supportService',
   [
     '$resource',
@@ -28,4 +29,32 @@ angular.module('ngSupport.services', [])
       )
     }
   ]
-);
+)
+
+.factory(
+  'screenshotService',
+  function () {
+
+    var screenshotImage = new Image();
+
+    var take = function take() {
+      html2canvas(document.body, {
+        onrendered: function(canvas) {
+          screenshotImage.src = canvas.toDataURL("image/png");
+          //show that screenshot feature is working
+          //document.body.appendChild(screenshotImage);
+
+          return screenshotImage;
+        }
+      });
+    };
+
+    return {
+      take: take,
+      screenshotImage: screenshotImage
+    };
+
+  }
+)
+
+;

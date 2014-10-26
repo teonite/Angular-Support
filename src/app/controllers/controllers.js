@@ -14,7 +14,8 @@ angular.module('ngSupport.controllers',[])
       '$modalInstance',
       'supportService',
       'supportType',
-      function ($scope, $modalInstance,supportService, supportType) {
+      'screenshotService',
+      function ($scope, $modalInstance,supportService, supportType, screenshotService) {
 
         $scope.supportType = supportType;
 
@@ -29,6 +30,7 @@ angular.module('ngSupport.controllers',[])
         };
 
         $scope.submit = function () {
+          $scope.issue.screenshotImage = screenshotService.screenshotImage.src;
           supportService.create($scope.issue).$promise.then(function (){
 //            NotificationService.success('Zgłoszenie wysłane.');
             $modalInstance.close();
