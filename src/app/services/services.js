@@ -43,7 +43,7 @@ angular.module('ngSupport.services', [])
           onrendered: function(canvas) {
             screenshotSrc = canvas.toDataURL("image/png");
             //show that screenshot feature is working
-            addImageToDom(screenshotSrc);
+            //addImageToDom(screenshotSrc);
 
             return screenshotSrc;
           }
