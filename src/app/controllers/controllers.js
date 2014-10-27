@@ -30,7 +30,12 @@ angular.module('ngSupport.controllers',[])
         };
 
         $scope.submit = function () {
-          $scope.issue.screenshotImage = screenshotService.screenshotImage.src;
+          //add screenshot to issue if available
+          var screenshot = screenshotService.screenshot();
+          if (screenshot) {
+            $scope.issue.screenshot = screenshot;
+          }
+
           supportService.create($scope.issue).$promise.then(function (){
 //            NotificationService.success('Zgłoszenie wysłane.');
             $modalInstance.close();

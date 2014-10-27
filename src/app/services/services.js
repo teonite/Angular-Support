@@ -35,23 +35,33 @@ angular.module('ngSupport.services', [])
   'screenshotService',
   function () {
 
-    var screenshotImage = new Image();
+    var screenshotSrc;
 
     var take = function take() {
-      html2canvas(document.body, {
-        onrendered: function(canvas) {
-          screenshotImage.src = canvas.toDataURL("image/png");
-          //show that screenshot feature is working
-          //document.body.appendChild(screenshotImage);
+      if (html2canvas) {
+        html2canvas(document.body, {
+          onrendered: function(canvas) {
+            screenshotSrc = canvas.toDataURL("image/png");
+            //show that screenshot feature is working
+            addImageToDom(screenshotSrc);
 
-          return screenshotImage;
-        }
-      });
+            return screenshotSrc;
+          }
+        });
+      }
+    };
+
+    var addImageToDom = function addImageToDom(screenshotSrc) {
+      var screenshotImage = new Image();
+      screenshotImage.src = screenshotSrc;
+      document.body.appendChild(screenshotImage);
     };
 
     return {
       take: take,
-      screenshotImage: screenshotImage
+      screenshot: function() {
+        return screenshotSrc;
+      }
     };
 
   }
