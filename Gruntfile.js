@@ -10,7 +10,7 @@ Copyright (C) 2012-2014 TEONITE - http://teonite.com
  2. Install Grunt 0.4.0 and other dependencies (`npm install`)
 
  Build:
- 
+
  Execute `grunt` from root directory of this directory (where Gruntfile.js is)
  To execute automatically after each change, execute `grunt --force default watch`
  To execute build followed by the test run, execute `grunt test`
@@ -73,6 +73,10 @@ module.exports = function (grunt) {
             {
               src: 'src/lib/bootstrap/dist/css/bootstrap.css',
               dest: 'dist/lib/bootstrap/css/bootstrap.css'
+            },
+            {
+              src: 'src/lib/html2canvas/build/html2canvas.min.js',
+              dest: 'dist/lib/html2canvas/html2canvas.min.js'
             }
           ]
         }

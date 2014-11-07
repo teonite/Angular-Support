@@ -1,17 +1,21 @@
 {
   "name": "ngSupport",
   "version": "0.0.1",
-  "main": ["./dist/ngSupport.js", "./dist/ngSupport.css"],
+  "main": [
+    "./dist/ngSupport.js",
+    "./dist/ngSupport.css"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
     "components",
     ".sass-cache"
   ],
-    "dependencies": {
-        "angular": "1.2.18",
-        "angular-resource": "~1.2.18",
-        "angular-bootstrap": "~0.11.0",
-        "bootstrap": "~3.1.1"
-    }
+  "dependencies": {
+    "angular": "1.2.18",
+    "angular-resource": "~1.2.18",
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap": "~3.1.1",
+    "html2canvas": "~0.4.1"
+  }
 }

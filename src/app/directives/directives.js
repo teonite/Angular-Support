@@ -11,7 +11,8 @@ angular.module('ngSupport.directives',[])
     'ngSupport',
     [
       '$modal',
-      function ($modal) {
+      'screenshotService',
+      function ($modal, screenshotService) {
         return {
           restrict: 'AEC',
           scope: {
@@ -19,6 +20,8 @@ angular.module('ngSupport.directives',[])
           },
           link: function (scope, element, attr) {
             element.bind('click', function () {
+              screenshotService.take();
+
               var modalInstance = $modal.open({
                 templateUrl: 'modalContentTemplate.html',
                 controller: 'ModalInstanceCtrl',
