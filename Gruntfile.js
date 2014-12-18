@@ -59,10 +59,6 @@ module.exports = function (grunt) {
               dest: 'dist/lib/angularjs/angular.js'
             },
             {
-              src: 'src/lib/angular-bootstrap/ui-bootstrap.js',
-              dest: 'dist/lib/angularjs/ui-bootstrap.js'
-            },
-            {
               src: 'src/lib/angular-bootstrap/ui-bootstrap-tpls.js',
               dest: 'dist/lib/angularjs/ui-bootstrap-tpls.js'
             },
