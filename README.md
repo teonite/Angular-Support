@@ -1,7 +1,8 @@
 Angular-Support
 ===============
 
-TEONITE Support Frontend - an application to submit a bug/features from your app/service to YouTrack/Redmine
+TEONITE Support Frontend - an application to submit a bug/features from your app/service to YouTrack/Redmine.
+It's a frontend for Django Support backend app: https://github.com/teonite/Django-Support
 
 Modal Styling
 =============
